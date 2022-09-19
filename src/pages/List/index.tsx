@@ -72,7 +72,7 @@ const List: React.FC<IRouteParams> = ({ match }) => {
         })
         setData(response);
 
-    }, [])
+    }, [data.length, listData])
 
     return (
         <Container>
@@ -100,7 +100,7 @@ const List: React.FC<IRouteParams> = ({ match }) => {
                 {
                     data.map(item => (
                         <HistoryFinanceCard
-                            key={item.id}                     
+                            key={Math.random () * data.length}                     
                             tagcolor={item.tagColor}
                             title={item.description}
                             subtitle={item.dataFormatted}
